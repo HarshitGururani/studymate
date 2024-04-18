@@ -52,7 +52,7 @@ const Header = () => {
         </div>
 
         <a
-          href="#"
+          href="https://github.com/HarshitGururani/studymate"
           target="_blank"
           className="hidden md:flex button items-center p-2 rounded-xl border  border-purple-300 shadow-md hover:shadow-xl"
         >
