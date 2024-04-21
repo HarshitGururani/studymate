@@ -24,13 +24,21 @@ const Footer = () => {
         </div>
         <div className="mx-2">
           <ul className="flex gap-6">
-            <a href="https://github.com/HarshitGururani" target="_blank">
+            <a
+              href="https://github.com/HarshitGururani"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <SlSocialGithub color="white" size={20} />
             </a>
-            <a href="">
+            <a href="" target="_blank" aria-label="Instagram">
               <FaInstagram color="white" size={20} />
             </a>
-            <a href="https://twitter.com/Harshit_guru_10" target="_blank">
+            <a
+              href="https://twitter.com/Harshit_guru_10"
+              target="_blank"
+              aria-label="twitter"
+            >
               <FaXTwitter color="white" size={20} />
             </a>
           </ul>

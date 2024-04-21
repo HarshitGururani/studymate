@@ -3,9 +3,10 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import NotAvailable from "../components/notAvailable/NotAvailable";
+import PdfViewer from "./PdfViewer";
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -18,8 +19,8 @@ const DetailsPage = () => {
   function findObjectById(data, id) {
     return data.filter((item) => item.id === id)[0] ?? undefined;
   }
-  const semData = findObjectById(data, Number(id));
-  console.log(semData);
+
+  const semData = useMemo(() => findObjectById(data, Number(id)), [data, id]);
 
   return (
     <div className="w-full pt-[20px] mb-12 md:mb-0 md:pt-[60px] md:min-h-[700px]">
@@ -96,19 +97,10 @@ const DetailsPage = () => {
           </ContentWrapper>
 
           {/* pdf section */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mt-16">
             {semData.pdf ? (
-              <div
-                className="flex items-center justify-center mt-7 md:mt-28 mb-24 mx-1 md:mx-0"
-                ref={sectionRef}
-              >
-                <embed
-                  src={`${semData.pdf}#zoom=${
-                    semData.zoom ? semData.zoom : 100
-                  }`}
-                  allow="autoplay"
-                  className="w-[330px]  h-[600px] md:w-[700px]"
-                ></embed>
+              <div ref={sectionRef}>
+                <PdfViewer src={semData.pdf} zoom={semData.zoom} />
               </div>
             ) : (
               <NotAvailable sectionRef={sectionRef} />

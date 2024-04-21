@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import cpdf from "../../src/pdf/c-pdf.pdf";
+
 const initialState = [
   {
     id: 1,
