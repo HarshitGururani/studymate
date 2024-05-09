@@ -22,7 +22,7 @@ const initialState = [
     id: 2,
     title: "Basic Mathematics",
     text: "Basic mathematics serves as the foundation for understanding and solving complex problems in various fields, from science to economics. Its principles provide essential tools for logical reasoning and quantitative analysis.",
-    backgroundUrl: "/src/assets/basic-maths.png",
+    backgroundUrl: "/assets/basic-maths.png",
     pdf: "",
   },
   {
