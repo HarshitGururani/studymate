@@ -1,45 +1,45 @@
-import GmailSvg from "/public/assets/svg/GmailSvg";
-import ContentWrapper from "../contentWrapper/ContentWrapper";
-import { SlSocialGithub } from "react-icons/sl";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
+import GmailSvg from '../../public/assets/svg/GmailSvg';
+import ContentWrapper from '../contentWrapper/ContentWrapper';
+import { SlSocialGithub } from 'react-icons/sl';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
 const Footer = () => {
   return (
-    <div className="bg-[#281a40] py-3" id="contact">
-      <ContentWrapper className="flex justify-between ">
-        <div className="mx-2">
-          <h4 className="text-white font-grotesk capitalize font-bold text-base">
+    <div className='bg-[#281a40] py-3' id='contact'>
+      <ContentWrapper className='flex justify-between '>
+        <div className='mx-2'>
+          <h4 className='text-white font-grotesk capitalize font-bold text-base'>
             Harshit Gururani
           </h4>
           <div
-            className="flex gap-2 items-center text-white cursor-pointer"
+            className='flex gap-2 items-center text-white cursor-pointer'
             onClick={(e) => {
               e.preventDefault();
-              window.open("mailto:harshit15gg@gmail.com", "_blank");
+              window.open('mailto:harshit15gg@gmail.com', '_blank');
             }}
           >
             <GmailSvg />
-            <p className="text-xs">harshit15gg@gmail.com</p>
+            <p className='text-xs'>harshit15gg@gmail.com</p>
           </div>
         </div>
-        <div className="mx-2">
-          <ul className="flex gap-6">
+        <div className='mx-2'>
+          <ul className='flex gap-6'>
             <a
-              href="https://github.com/HarshitGururani"
-              target="_blank"
-              aria-label="Instagram"
+              href='https://github.com/HarshitGururani'
+              target='_blank'
+              aria-label='Instagram'
             >
-              <SlSocialGithub color="white" size={20} />
+              <SlSocialGithub color='white' size={20} />
             </a>
-            <a href="" target="_blank" aria-label="Instagram">
-              <FaInstagram color="white" size={20} />
+            <a href='' target='_blank' aria-label='Instagram'>
+              <FaInstagram color='white' size={20} />
             </a>
             <a
-              href="https://twitter.com/Harshit_guru_10"
-              target="_blank"
-              aria-label="twitter"
+              href='https://twitter.com/Harshit_guru_10'
+              target='_blank'
+              aria-label='twitter'
             >
-              <FaXTwitter color="white" size={20} />
+              <FaXTwitter color='white' size={20} />
             </a>
           </ul>
         </div>
