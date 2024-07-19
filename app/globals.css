@@ -1,33 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply font-sans text-base;
+    position: relative;
+    background-color: #eee8f6;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .h1 {
+    @apply font-semibold text-[2.5rem] leading-[3.25rem] md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem];
+  }
+
+  .h2 {
+    @apply text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight;
+  }
+
+  .h3 {
+    @apply text-[2.0rem] leading-normal md:text-[2.2rem];
+  }
+
+  .h4 {
+    @apply text-[2rem] leading-normal;
+  }
+
+  .h5 {
+    @apply text-2xl leading-normal;
+  }
+
+  .h6 {
+    @apply font-semibold text-lg;
+  }
+
+  .body-1 {
+    @apply text-[0.875rem] leading-[1.5rem] md:text-[1rem] md:leading-[1.75rem] lg:text-[1rem] lg:leading-8;
+  }
+
+  .body-2 {
+    @apply font-light text-[0.8rem] leading-6 md:text-base;
+  }
+
+  .caption {
+    @apply text-sm;
+  }
+
+  .tagline {
+    font-family: var(--font-grotesk);
+    @apply font-grotesk font-light text-xs tracking-tagline uppercase;
+  }
+
+  .quote {
+    font-family: var(--font-code);
+    @apply text-lg leading-normal;
+  }
+
+  .button {
+    font-family: var(--font-code);
+    @apply text-xs font-bold uppercase tracking-wider;
+  }
+
+  .font-sora {
+    font-family: var(--font-sora);
+  }
+
+  .font-grotesk {
+    font-family: var(--font-grotesk);
+  }
+
+  .font-code {
+    font-family: var(--font-code);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+* {
+  scroll-behavior: smooth;
+}
+
+.book {
+  position: relative;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book2 {
+  position: relative;
+  border-radius: 10px;
+
+  -webkit-perspective: 1700px;
+  perspective: 1700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/*Global btn styles*/
+.btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  font-size: 15px;
+  border: none;
+}
+
+/*Main button styles*/
+.btn {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  text-indent: 50px;
+  transition: 300ms;
+  font-weight: 500;
+}
+
+.btn::before {
+  content: "";
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(174, 102, 241);
+  z-index: -1;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 19.5px;
+  transform: translate(-50%, -50%) rotate(133deg);
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transition: 400ms;
+}
+
+.btn:hover {
+  text-indent: 15px;
+  color: white;
+  font-weight: 600;
+}
+
+.btn:active {
+  scale: 0.95;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn:hover::after {
+  left: calc(100% - 25px);
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 130px 0;
+  perspective: 780px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #cecece;
+  z-index: 10;
+}
+
+.load-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.load-inner.load-one {
+  left: 0%;
+  top: 0%;
+  border-bottom: 3px solid #5c5edc;
+  animation: rotate1 1.15s linear infinite;
+}
+
+.load-inner.load-two {
+  right: 0%;
+  top: 0%;
+  border-right: 3px solid #9147ff;
+  animation: rotate2 1.15s 0.1s linear infinite;
+}
+
+.load-inner.load-three {
+  right: 0%;
+  bottom: 0%;
+  border-top: 3px solid #3b82f6;
+  animation: rotate3 1.15s 0.15s linear infinite;
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: rotateX(45deg) rotateY(-45deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(45deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate3 {
+  0% {
+    transform: rotateX(-60deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(-60deg) rotateY(0deg) rotateZ(360deg);
   }
 }
