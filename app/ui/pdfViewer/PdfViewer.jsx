@@ -21,7 +21,7 @@ const PdfViewer = ({ src, zoom }) => {
         </div>
       )}
       <iframe
-        src={`${src}#zoom=${zoom ? zoom : 100}`}
+        src={`${src}`}
         onLoad={handleLoad}
         allow="autoplay"
         className={`w-[330px] h-[600px] md:w-[700px] ${
