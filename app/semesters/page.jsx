@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
-import ContentWrapper from "../ui/contentWrapper/ContentWrapper";
-import Link from "next/link";
+
 import { getSemData } from "../lib/data";
 import Carousel from "../ui/carousel/Carousel";
+import ContentWrapper from "../ui/contentWrapper/ContentWrapper";
 getSemData;
 
 const page = async () => {

@@ -10,20 +10,20 @@ const SubjectPage = async ({ params }) => {
   const { subject_id } = params;
   const data = await getSubjectData(subject_id);
   return (
-    <div className="w-full pt-[20px] mb-12 md:mb-0 md:pt-6 md:min-h-[700px]">
+    <div className="w-full pt-[20px] mb-12 md:mb-0 md:pt-6 md:min-h-[700px]  px-0 max-sm:px-5">
       <ContentWrapper>
         <div className="flex flex-col gap-6 md:flex-row md:gap-12">
-          <div className="flex-shrink-0  ml-3 md:ml-0 ">
+          <div className="flex-shrink-0 md:ml-0 ">
             <div className="p-3">
               <img
                 src={data.backgroundUrl}
                 alt={`Image of ${data.title}`}
-                className="w-[70%] md:w-full block rounded-xl md:max-w-[360px]"
+                className="w-[60%] md:w-full block rounded-xl md:max-w-[360px]"
               />
             </div>
             {data.pdf && (
-              <div className="hidden md:flex flex-col items-start md:items-center justify-center gap-4 ml-6 md:ml-0 mt-3 scroll-smooth">
-                <button className={`disabled:${loading}`}>
+              <div className="flex flex-col items-start md:items-center justify-center gap-4 ml-6 md:ml-0 mt-3 scroll-smooth">
+                <button disabled={loading}>
                   <Link
                     href={"#pdf"}
                     className="btn w-[140px] h-[40px] scroll-smooth"
@@ -38,7 +38,7 @@ const SubjectPage = async ({ params }) => {
             <div className="title text-gray-950 text-3xl leading-10 md:leading-[44px] mb-2 font-bold ml-1">
               {data.title}
             </div>
-            <div className="subtext text-base md:text-lg leading-6 text-slate-700 mb-12 ml-3">
+            <div className="subtext text-[14px] md:text-lg leading-6 text-slate-700 mb-12 ml-3">
               {data.text}
             </div>
 
@@ -47,7 +47,7 @@ const SubjectPage = async ({ params }) => {
                 <h4 className="text-purple-700 h6 font-semibold font-grotesk">
                   Recommended {data.title} Learning Playlists
                 </h4>
-                <ul className="ml-6 md:ml-10 mt-2">
+                <ul className="ml-2 md:ml-10 mt-2">
                   <li className="flex items-center gap-1 mb-4">
                     {data.url[0] && (
                       <>
