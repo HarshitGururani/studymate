@@ -48,9 +48,12 @@ const NavItems = ({ user, imageUrl }) => {
           >
             Home
           </Link>
-          <a href="#contact" className="text-slate-700  hover:text-purple-300">
+          <Link
+            href="/footer"
+            className="text-slate-700  hover:text-purple-300"
+          >
             Contact
-          </a>
+          </Link>
 
           {/* <DropdownMenu>
             <DropdownMenuTrigger
